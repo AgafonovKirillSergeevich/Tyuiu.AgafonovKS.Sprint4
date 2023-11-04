@@ -9,7 +9,7 @@ namespace Tyuiu.AgafonovKS.Sprint4.Task0.V13.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidGetSumEvenArrEl()
         {
             DataService ds = new DataService();
 
