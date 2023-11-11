@@ -12,22 +12,20 @@ namespace Tyuiu.AgafonovKS.Sprint4.Task3.V3.Lib
     {
         public int Calculate(int[,] array)
         {
-            int rows = array.GetUpperBound(0) + 1;
-            int columns = array.GetUpperBound(1) + 1;
-
-            int count = 0;
-
-            for (int i = 0; i < rows; i++)
+            int res = 0;
+            int height = array.GetLength(0);
+            int width = array.GetLength(1);
+            for (int y = 0; y < height; y++)
             {
-                for (int j = 0; j < columns; j++)
+                for (int x = 0; x < width; x++)
                 {
-                    if (array[i, j] % 2 != 0)
+                    if (x == 0)
                     {
-                        count++;
+                        res += array[y, 0];
                     }
                 }
             }
-            return count;
+            return res;
         }
     }
 }

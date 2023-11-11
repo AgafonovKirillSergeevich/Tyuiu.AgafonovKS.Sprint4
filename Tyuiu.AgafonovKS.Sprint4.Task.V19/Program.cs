@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Tyuiu.AgafonovKS.Sprint4.Task3.V3.Lib;
+using Tyuiu.AgafonovKS.Sprint4.Task4.V19.Lib;
 
-namespace Tyuiu.AgafonovKS.Sprint4.Task3.V3
+namespace Tyuiu.AgafonovKS.Sprint4.Task.V19
 {
     internal class Program
     {
@@ -30,11 +30,7 @@ namespace Tyuiu.AgafonovKS.Sprint4.Task3.V3
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int[,] myArray = { { 9, 4, 5, 4, 8 }, 
-                               { 7, 6, 7, 7, 4 }, 
-                               { 4, 4, 3, 5, 6 },
-                               { 6, 5, 9, 4, 9 }, 
-                               { 9, 7, 8, 7, 7 } };
+            int[,] myArray = { { 9, 4, 5, 4, 8 }, { 7, 6, 7, 7, 4 }, { 4, 4, 3, 5, 6 }, { 6, 5, 9, 4, 9 }, { 9, 7, 8, 7, 7 } };
             int rows = myArray.GetUpperBound(0) + 1;
             int columns = myArray.GetUpperBound(1) + 1;
             for (int i = 0; i < myArray.GetLength(0); i++)

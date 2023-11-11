@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Tyuiu.AgafonovKS.Sprint4.Task3.V3.Lib;
+using Tyuiu.AgafonovKS.Sprint4.Task4.V19.Lib;
 
-namespace Tyuiu.AgafonovKS.Sprint4.Task3.V3
+namespace Tyuiu.AgafonovKS.Sprint4.Task4.V19
 {
     internal class Program
     {
@@ -18,30 +18,44 @@ namespace Tyuiu.AgafonovKS.Sprint4.Task3.V3
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
             Console.WriteLine("* Тема: Обработка структурных типов                                       *");
-            Console.WriteLine("* Задание #3                                                              *");
-            Console.WriteLine("* Вариант 3                                                               *");
+            Console.WriteLine("* Задание #4                                                              *");
+            Console.WriteLine("* Вариант 19                                                               *");
             Console.WriteLine("* Выполнил: Агафонов Кирилл Сергеевич | ИИПб-23-1                         *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Дан двумерный целочисленный массив 5 на 5 элементов, заполненный        *");
-            Console.WriteLine("* статическими значениями в диапазоне от 3 до 9.                          *");
-            Console.WriteLine("* Найдите сумму элементов в первом столбце массива.                       *");
+            Console.WriteLine("* значениями с клавиатуры в диапазоне от 1 до 7.                          *");
+            Console.WriteLine("* Найдите сумму нечетных элементов массива.                               *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int[,] myArray = { { 9, 4, 5, 4, 8 }, 
-                               { 7, 6, 7, 7, 4 }, 
-                               { 4, 4, 3, 5, 6 },
-                               { 6, 5, 9, 4, 9 }, 
-                               { 9, 7, 8, 7, 7 } };
-            int rows = myArray.GetUpperBound(0) + 1;
-            int columns = myArray.GetUpperBound(1) + 1;
-            for (int i = 0; i < myArray.GetLength(0); i++)
+            int rows = 5;
+            int columns = 5;
+
+            Console.WriteLine("Количество строк в массиве = " + rows);
+            Console.WriteLine("Количество столбцов в массиве = " + columns);
+            Console.WriteLine("***************************************************************************");
+
+            int[,] myArray = new int[rows, columns];
+
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < myArray.GetLength(1); j++)
+                for (int j = 0; j < columns; j++)
                 {
-                    Console.Write(myArray[i, j] + "\t");
+                    Console.WriteLine($"Введите {i}, {j} элемент массива: ");
+                    myArray[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Массив: ");
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.Write($"{myArray[i, j]} \t");
                 }
                 Console.WriteLine();
             }
@@ -51,7 +65,7 @@ namespace Tyuiu.AgafonovKS.Sprint4.Task3.V3
             Console.WriteLine("***************************************************************************");
 
             int result = ds.Calculate(myArray);
-            Console.WriteLine("Сумма элементов первого столбца массива = " + result);
+            Console.WriteLine("Сумма нечётных элементов массива = " + result);
 
             Console.ReadKey();
         }
